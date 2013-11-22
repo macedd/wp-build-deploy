@@ -58,7 +58,7 @@ define('WP_DEFAULT_THEME', 'wordpress-bootstrap');
 if ( !defined('WP_HOME') )
 	define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
 if ( !defined('WP_SITEURL') )
-	define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
+	define('WP_SITEURL', WP_HOME . '/wordpress');
 
 /**
 * Moving wp-content folder configuration
@@ -66,7 +66,7 @@ if ( !defined('WP_SITEURL') )
 if ( !defined('WP_CONTENT_DIR') )
 	define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content');
 if ( !defined('WP_CONTENT_URL') )
-	define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
+	define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 
 
 
