@@ -68,6 +68,11 @@ if ( !defined('WP_CONTENT_DIR') )
 if ( !defined('WP_CONTENT_URL') )
 	define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 
+/**
+* We do need anyone tricking files in the admin - we're in git
+*/
+if ( !defined('DISALLOW_FILE_EDIT') )
+	define('DISALLOW_FILE_EDIT', true);
 
 
 /** Absolute path to the WordPress directory. */
