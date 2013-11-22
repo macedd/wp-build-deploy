@@ -20,9 +20,8 @@
 * 
 * Insert file wp-config-env.php with the above variables and constants
 */
-if ( file_exists( dirname( __FILE__ ) . '/wp-config-env.php' ) ) {
+if ( file_exists( dirname( __FILE__ ) . '/wp-config-env.php' ) )
     include( dirname( __FILE__ ) . '/wp-config-env.php' );
-} else {
 	// ** MySQL settings - You can get this info from your web host ** //
 	/** The name of the database for WordPress */
 	define('DB_NAME', 'database_name_here');
