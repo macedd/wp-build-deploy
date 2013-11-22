@@ -55,14 +55,18 @@ define('WP_DEFAULT_THEME', 'wordpress-bootstrap');
 /**
 * This lets WordPress know that the core files are in the wordpress directory
 */
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
-define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
+if ( !defined('WP_HOME') )
+	define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
+if ( !defined('WP_SITEURL') )
+	define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
 
 /**
 * Moving wp-content folder configuration
 */
-define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content');
-define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
+if ( !defined('WP_CONTENT_DIR') )
+	define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content');
+if ( !defined('WP_CONTENT_URL') )
+	define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
 
 
 
