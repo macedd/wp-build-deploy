@@ -7,10 +7,10 @@
 if ( file_exists( dirname( __FILE__ ) . '/wp-config-env.php' ) ) {
     include( dirname( __FILE__ ) . '/wp-config-env.php' );
 } else {
-	die('You did not configured the system properly. Missing wp-config-env.php')
+	die('You did not configured the system properly. Missing wp-config-env.php');
 }
 
-include 'wp-config-salt.php'
+include 'wp-config-salt.php';
 
 /**#@-*/
 
