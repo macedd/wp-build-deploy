@@ -14,24 +14,34 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
 
-/** MySQL database username */
-define('DB_USER', 'username_here');
+/**
+* Alow local environment configuration
+* 
+* Insert file wp-config-env.php with the above variables and constants
+*/
+if ( file_exists( dirname( __FILE__ ) . '/wp-config-env.php' ) ) {
+    include( dirname( __FILE__ ) . '/wp-config-env.php' );
+} else {
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'database_name_here');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+	/** MySQL database username */
+	define('DB_USER', 'username_here');
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+	/** MySQL database password */
+	define('DB_PASSWORD', 'password_here');
 
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
 
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8');
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -69,7 +79,8 @@ $table_prefix  = 'wp_';
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-define('WPLANG', '');
+if ( !defined( 'WPLANG' ) )
+	define('WPLANG', '');
 
 /**
  * For developers: WordPress debugging mode.
@@ -78,17 +89,11 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+if ( !defined( 'WP_DEBUG' ) )
+	define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
-/**
-* Alow local environment configuration
-* 
-* Insert file wp-config-env.php with the above variables and constants
-*/
-if ( file_exists( dirname( __FILE__ ) . '/wp-config-env.php' ) )
-    include( dirname( __FILE__ ) . '/wp-config-env.php' );
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
