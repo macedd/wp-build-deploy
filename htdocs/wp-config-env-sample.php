@@ -12,8 +12,15 @@ define('DB_COLLATE', '');
 
 // Sets  our local env domains
 define('WP_HOME','http://local.website.com');
- 
-// Turn on debug for local environment and other settings
-define('WP_DEBUG', true);
-define('SAVEQUERIES', false);
 define('WP_CACHE', false);
+
+// Turn on debug for local environment
+define('WP_DEBUG', true);
+
+// Save wp-content/debug.log and supress the debug info on pages
+define('WP_DEBUG_LOG', true); 
+define('WP_DEBUG_DISPLAY', false);
+@ini_set('display_errors',0);
+
+define('SAVEQUERIES', false);
+define('SCRIPT_DEBUG', true);
