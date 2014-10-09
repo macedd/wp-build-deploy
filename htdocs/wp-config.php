@@ -20,7 +20,7 @@ include 'wp-config-salt.php';
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
  */
-if (!$table_prefix)
+if (empty($table_prefix))
 	$table_prefix  = 'wp_';
 
 /**
@@ -44,6 +44,13 @@ if ( !defined( 'WPLANG' ) )
 if ( !defined( 'WP_DEBUG' ) )
 	define('WP_DEBUG', false);
 
+/**
+* If you want to specify a maximum number of revisions,
+* change to false or an integer/number (e.g., 3 or 5). 
+*/
+if ( !defined( 'WP_POST_REVISIONS' ) )
+	define( 'WP_POST_REVISIONS', 5 );
+
 /* That's all, stop editing! Happy blogging. */
 
 
@@ -51,6 +58,10 @@ if ( !defined( 'WP_DEBUG' ) )
 * Define our default theme
 */
 define('WP_DEFAULT_THEME', 'wordpress-bootstrap');
+
+/** Absolute path to the WordPress root directory. */
+if ( !defined('ABSPATH') )
+	define('ABSPATH', dirname(__FILE__) . '/wordpress');
 
 /**
 * This lets WordPress know that the core files are in the wordpress directory
@@ -64,7 +75,7 @@ if ( !defined('WP_SITEURL') )
 * Moving wp-content folder configuration
 */
 if ( !defined('WP_CONTENT_DIR') )
-	define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content');
+	define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
 if ( !defined('WP_CONTENT_URL') )
 	define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 
@@ -74,10 +85,6 @@ if ( !defined('WP_CONTENT_URL') )
 if ( !defined('DISALLOW_FILE_EDIT') )
 	define('DISALLOW_FILE_EDIT', true);
 
-
-/** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
