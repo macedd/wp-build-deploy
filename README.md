@@ -1,17 +1,17 @@
 wp-build-deploy
 ===============
 
+Build and Deploy WordPress sites with the garantee of `git` and the quality of `grunt` in the environment of your choice.
 
-##Todo
+Check the `build` folder for setup instructions.
 
-Document and automate the process of deploying with this environment
+###TODO
 
-- Setup
-- Build
-- Deploy
-
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thiagof/wp-build-deploy/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
+- Apache/nginx config files
+- htaccess
+- WP Backup script
+    - database, application, uploads
+    - rsync, git, ..
+    - restore!
+    - fab? grunt? bash!
+- Better sass performance (http://benfrain.com/lightning-fast-sass-compiling-with-libsass-node-sass-and-grunt-sass/)
