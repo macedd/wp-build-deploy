@@ -184,7 +184,22 @@ module.exports = function( grunt ) {
 				'<%= dirs.sass %>/bootstrap/bootstrap.scss',
 				'<%= dirs.tmp %>'
 			]
+		},
+
+		mkdir: {
+			bootstrap: {
+				options: {
+					create: [
+						'<%= dirs.tmp %>',
+						'<%= dirs.sass %>/bootstrap/',
+						'<%= dirs.js %>/bootstrap/',
+						'<%= dirs.js %>/libs/',
+						'<%= dirs.fonts %>/bootstrap/'
+					],
+				}
+			},
 		}
+
 	};
 
 	// Initialize Grunt Config
@@ -216,6 +231,7 @@ module.exports = function( grunt ) {
 	// Bootstrap Task
 	grunt.registerTask( 'bootstrap', [
 		'clean:prepare',
+		'mkdir:bootstrap',
 		'curl:bootstrap_sass',
 		'unzip:bootstrap_scss',
 		'rename:bootstrap_scss',
