@@ -1,17 +1,35 @@
-wp-build-deploy
+WP-Build-Deploy
 ===============
 
-Build and Deploy WordPress sites with the garantee of `git` and the quality of `grunt` in the environment of your choice.
+This is a deployment structure and facilities to build and deploy WordPress applications with `git` and `grunt` in the environment of your choice.
 
 Its structure is built to run WordPress from a git repository.
 
-###Installing
+###Getting Started
 
-    git clone https://github.com/thiagof/wp-build-deploy.git
-    cd wp-build-deploy
+Create your project repository
 
+    mkdir myproj
+    cd myproj
+
+    git init
+
+    # Add your project repository
+    git remote add origin https://github.com/thiagof/myproj.git
+
+Pull the **wp-build-deploy** repository
+
+    git remote add wpbuild https://github.com/thiagof/wp-build-deploy.git
+    git pull wpbuild master
     git submodule init
     git submodule update
+
+
+Push to your repo the new structure
+
+    git push origin master
+
+Now you can run it in your server and start developing.
 
 Check the `build` folder for its setup instructions.
 
