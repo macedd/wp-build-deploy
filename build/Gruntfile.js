@@ -202,16 +202,16 @@ module.exports = function( grunt ) {
 		mkdir: {
 			theme: {
 				options: {
-					create: {
+					create: [
 						'<%= dirs.sass %>',
 						'<%= dirs.css %>',
 						'<%= dirs.js %>',
 						'<%= dirs.js %>/libs/',
 						'<%= dirs.images %>',
 						'<%= dirs.fonts %>',
-					}
+					]
 				}
-			}
+			},
 			bootstrap: {
 				options: {
 					create: [
