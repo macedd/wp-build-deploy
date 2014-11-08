@@ -12,6 +12,7 @@ module.exports = function( grunt ) {
 
 		// setting folder templates
 		dirs: {
+			css: themeDir +'/assets/css',
 			js: themeDir +'/assets/js',
 			sass: themeDir +'/assets/sass',
 			images: themeDir +'/assets/images',
@@ -76,15 +77,27 @@ module.exports = function( grunt ) {
 		compass: {
 			dist: {
 				options: {
-					config: 'config.rb',
+					//config: 'config.rb',
 					outputStyle: 'compressed',
+					cssDir:    '<%= dirs.css %>',
+					sassDir:   '<%= dirs.sass %>',
+					imagesDir: '<%= dirs.images %>',
+					fontsDir:  '<%= dirs.fonts %>',
+					javascriptsDir: '<%= dirs.js %>',
+					relativeAssets: true,
+					noLineComments: true,
 				}
 			},
 			dev: {
 				options: {
-					config: 'config.rb',
 					environment: 'development',
 					outputStyle: 'expanded',
+					cssDir:    '<%= dirs.css %>',
+					sassDir:   '<%= dirs.sass %>',
+					imagesDir: '<%= dirs.images %>',
+					fontsDir:  '<%= dirs.fonts %>',
+					javascriptsDir: '<%= dirs.js %>',
+					relativeAssets: true,
 				}
 			}
 		},
@@ -95,7 +108,7 @@ module.exports = function( grunt ) {
 				files: [
 					'<%= dirs.sass %>/**'
 				],
-				tasks: ['compass']
+				tasks: ['compass:dist']
 			},
 			js: {
 				files: [
@@ -187,6 +200,18 @@ module.exports = function( grunt ) {
 		},
 
 		mkdir: {
+			theme: {
+				options: {
+					create: {
+						'<%= dirs.sass %>',
+						'<%= dirs.css %>',
+						'<%= dirs.js %>',
+						'<%= dirs.js %>/libs/',
+						'<%= dirs.images %>',
+						'<%= dirs.fonts %>',
+					}
+				}
+			}
 			bootstrap: {
 				options: {
 					create: [

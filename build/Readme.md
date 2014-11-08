@@ -36,7 +36,6 @@ Change the array `dirs` inside themeConfig to represent your theme locations
 
     # Configure your theme locations
     nano Gruntfile.js
-    nano config.rb
 
 ##Using it
 
